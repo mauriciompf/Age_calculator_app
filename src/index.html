@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="../dist/output.css">
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+<body class="h-full bg-neutral-light-grey">
+  <main class="pt-10 font-poppins pb-10 md:p-0 md:grid md:items-center md:h-screen">
+    <div class="bg-neutral-white m-auto w-11/12 py-6 md:pt-1 px-2 md:px-4 rounded-xl rounded-br-[125px] md:w-[700px]">
+      <!-- 3 Columns -->
+      <div class="flex font-bold justify-start mb-7 md:mb-4 md:gap-2">
+        <div>
+          <span class=" text-[.35em]
+          tracking-wider uppercase text-neutral-smokey-grey">Day</span>
+          <div class="relative flex items-center md:w-14">
+            <input class=" border border-l-neutral-light-grey rounded-sm w-11/12 pl-2 py-1 text-[.4em] md:text-[.6em] peer" type="number" placeholder=" " id="digit">
+            <label class="peer-focus:opacity-50 peer-placeholder-shown:block hidden pointer-events-none absolute text-neutral-smokey-grey text-[.4em] md:text-[.6em] pl-2 peer-focus:text-blue" for="digit">DD</label>
+          </div>
+        </div>
+        <div>
+          <span class=" text-[.35em]
+          tracking-wider uppercase text-neutral-smokey-grey">Month</span>
+          <div class="relative flex items-center md:w-14">
+            <input class=" border border-l-neutral-light-grey rounded-sm w-11/12 pl-2 py-1 text-[.4em] md:text-[.6em] peer" type="number" placeholder=" " id="digit">
+            <label class="peer-focus:opacity-50 peer-placeholder-shown:block hidden pointer-events-none absolute text-neutral-smokey-grey text-[.4em] md:text-[.6em] pl-2 peer-focus:text-blue" for="digit">MM</label>
+          </div>
+        </div>
+        <div>
+          <span class=" text-[.35em]
+          tracking-wider uppercase text-neutral-smokey-grey">Year</span>
+          <div class="relative flex items-center md:w-14">
+            <input class=" border border-l-neutral-light-grey rounded-sm w-11/12 pl-2 py-1 text-[.4em] md:text-[.6em] peer" type="number" placeholder=" " id="digit">
+            <label class="peer-focus:opacity-50 peer-placeholder-shown:block hidden  pointer-events-none absolute text-neutral-smokey-grey text-[.4em] md:text-[.6em] pl-2" for="digit">YYYY</label>
+          </div>
+        </div>
+      </div>
+      <div class="relative border-t border-l-neutral-light-grey pt-5">
+        <div class="w-7 text-center -top-4 left-1/2 translate-x-[-50%] absolute bg-primary-purple p-2 rounded-full md:right-0 md:translate-x-0 md:left-auto">
+          <img class="" src="./assets/images/icon-arrow.svg" alt="">
+        </div>
+        <div class="text-2xl md:text-4xl leading-6">
+          <strong class="italic font-extrabold"><span class="text-primary-purple pr-2">- -</span>years</strong>
+        </div>
+        <div class="text-2xl md:text-4xl leading-6">
+          <strong class="italic font-extrabold"><span class="text-primary-purple pr-2">- -</span>months</strong>
+        </div>
+        <div class="text-2xl md:text-4xl leading-6">
+          <strong class="italic font-extrabold"><span class="text-primary-purple pr-2">- -</span>days</strong>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- <div class="attribution"> -->
+    <!-- Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  -->
+    <!-- Coded by <a href="#">Your Name Here</a>. -->
+  <!-- </div> -->
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
