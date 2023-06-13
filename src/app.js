@@ -4,28 +4,14 @@ const inputDays = document.querySelector("#digit-days");
 const digitYears = document.querySelector("#years");
 const digitMonths = document.querySelector("#months");
 const digitDays = document.querySelector("#days");
+const button = document.querySelector("#button");
 
-function calculateTimeDifference(birthdate) {
-  const birthdateObj = new Date(birthdate);
-  const currentDate = new Date();
-
-  const timeDiff = currentDate.getTime() - birthdateObj.getTime();
-  const daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
-
-  const years = Math.floor(daysDiff / 365);
-  const months = Math.floor((daysDiff % 365) / 30);
-  const days = (daysDiff % 365) % 30;
-
-  return { years, months, days };
-}
-
-const birthdate = `${inputYears.value}-${inputMonths.value}-${inputDays.value}`;
-const timeDifference = calculateTimeDifference(birthdate);
-
-inputYears.addEventListener("keyup", () => {
-  digitYears.textContent = inputYears.value;
+const emptyValue = "- -";
+button.addEventListener("click", () => {
+  const currentDay = new Date().getDate();
+  const currentYear = new Date().getFullYear();
+  const currentMonth = new Date().getMonth + 1;
+  digitDays.textContent = currentDay - inputDays.value;
+  digitMonths.textContent = currentMonth - inputMonths.value;
+  digitYears.textContent = currentYear - inputYears.value;
 });
-
-console.log(
-  `${timeDifference.years}: years, ${timeDifference.months}: months, and ${timeDifference.days}: days`
-);
