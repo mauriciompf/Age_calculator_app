@@ -9,9 +9,22 @@ const button = document.querySelector("#button");
 const emptyValue = "- -";
 button.addEventListener("click", () => {
   const currentDay = new Date().getDate();
+  const currentMonth = new Date().getMonth() + 1;
   const currentYear = new Date().getFullYear();
-  const currentMonth = new Date().getMonth + 1;
-  digitDays.textContent = currentDay - inputDays.value;
-  digitMonths.textContent = currentMonth - inputMonths.value;
-  digitYears.textContent = currentYear - inputYears.value;
+
+  let yearDiff = currentYear - inputYears.value;
+  let monthDiff = currentMonth - inputMonths.value;
+  let dayDiff = currentDay - inputDays.value;
+
+  if (monthDiff < 0) {
+    monthDiff = currentMonth;
+
+    if (monthDiff !== yearDiff) {
+      yearDiff--;
+    }
+  }
+
+  digitYears.textContent = yearDiff;
+  digitMonths.textContent = monthDiff;
+  digitDays.textContent = dayDiff;
 });
