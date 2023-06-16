@@ -13,16 +13,28 @@ button.addEventListener("click", () => {
   const currentYear = new Date().getFullYear();
 
   let yearDiff = currentYear - inputYears.value;
-  let monthDiff = currentMonth - inputMonths.value;
-  let dayDiff = currentDay - inputDays.value;
+  let monthDiff = Math.abs(currentMonth - inputMonths.value);
+  let dayDiff = Math.abs(currentDay - inputDays.value);
 
-  if (monthDiff < 0) {
-    monthDiff = currentMonth;
-
-    if (monthDiff !== yearDiff) {
-      yearDiff--;
+  if (inputMonths.value >= currentMonth) {
+    monthDiff = currentMonth + (12 - inputMonths.value);
+    if (monthDiff === 12) {
+      monthDiff = 0;
     }
+  } else {
+    monthDiff = inputMonths.value;
   }
+
+  if (inputMonths.value < currentMonth) {
+    yearDiff--;
+  }
+
+  // if (dayDiff >= currentDay && ) {
+  //   console.log("1");
+  // } else {
+  //   console.log("2");
+  //   yearDiff++;
+  // }
 
   digitYears.textContent = yearDiff;
   digitMonths.textContent = monthDiff;
