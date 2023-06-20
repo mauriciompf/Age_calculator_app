@@ -16,29 +16,29 @@
           <span class=" text-[.35em]
           tracking-wider uppercase text-neutral-smokey-grey">Day</span>
           <div class="relative flex items-center md:w-14">
-            <input class=" border border-l-neutral-light-grey rounded-sm w-11/12 pl-2 py-1 text-[.4em] md:text-[.6em] peer" type="number" placeholder=" " id="digit-days">
-            <label class="peer-focus:opacity-50 peer-placeholder-shown:block hidden pointer-events-none absolute text-neutral-smokey-grey text-[.4em] md:text-[.6em] pl-2 peer-focus:text-blue" for="digit">DD</label>
+            <input class=" border border-l-neutral-light-grey rounded-sm w-11/12 pl-2 py-1 text-[.4em] md:text-[.6em] peer" type="text" maxlength="2" min="0" max="31" step="1" pattern="[0-9]{2}" placeholder=" " id="digit-days">
+            <label class="peer-focus:opacity-50 peer-placeholder-shown:block hidden pointer-events-none absolute text-neutral-smokey-grey text-[.4em] md:text-[.6em] pl-2 peer-focus:text-blue" for="digit-days">DD</label>
           </div>
         </div>
         <div>
           <span class=" text-[.35em]
           tracking-wider uppercase text-neutral-smokey-grey">Month</span>
           <div class="relative flex items-center md:w-14">
-            <input class=" border border-l-neutral-light-grey rounded-sm w-11/12 pl-2 py-1 text-[.4em] md:text-[.6em] peer" type="number" placeholder=" " id="digit-months">
-            <label class="peer-focus:opacity-50 peer-placeholder-shown:block hidden pointer-events-none absolute text-neutral-smokey-grey text-[.4em] md:text-[.6em] pl-2 peer-focus:text-blue" for="digit">MM</label>
+            <input class=" border border-l-neutral-light-grey rounded-sm w-11/12 pl-2 py-1 text-[.4em] md:text-[.6em] peer" type="text" maxlength="2" min="0" max="12" step="1" pattern="[0-9]{2}" placeholder=" " id="digit-months">
+            <label class="peer-focus:opacity-50 peer-placeholder-shown:block hidden pointer-events-none absolute text-neutral-smokey-grey text-[.4em] md:text-[.6em] pl-2 peer-focus:text-blue" for="digit-months">MM</label>
           </div>
         </div>
         <div>
           <span class=" text-[.35em]
           tracking-wider uppercase text-neutral-smokey-grey">Year</span>
           <div class="relative flex items-center md:w-14">
-            <input class=" border border-l-neutral-light-grey rounded-sm w-11/12 pl-2 py-1 text-[.4em] md:text-[.6em] peer" type="number" placeholder=" " id="digit-years">
-            <label class="peer-focus:opacity-50 peer-placeholder-shown:block hidden  pointer-events-none absolute text-neutral-smokey-grey text-[.4em] md:text-[.6em] pl-2" for="digit">YYYY</label>
+            <input class=" border border-l-neutral-light-grey rounded-sm w-11/12 pl-2 py-1 text-[.4em] md:text-[.6em] peer" type="text" maxlength="4" min="0" max="9999" pattern="[0-9]{4}" placeholder=" " id="digit-years">
+            <label class="peer-focus:opacity-50 peer-placeholder-shown:block hidden  pointer-events-none absolute text-neutral-smokey-grey text-[.4em] md:text-[.6em] pl-2" for="digit-years">YYYY</label>
           </div>
         </div>
       </div>
       <div class="relative border-t border-l-neutral-light-grey pt-5">
-        <button id="button" class="w-7 text-center -top-4 left-1/2 translate-x-[-50%] absolute bg-primary-purple p-2 rounded-full md:right-0 md:translate-x-0 md:left-auto">
+        <button id="button" class="w-7 text-center -top-4 left-1/2 translate-x-[-50%] absolute bg-primary-purple p-2 rounded-full md:right-0 md:translate-x-0 md:left-auto" aria-label="Get the date">
           <img class="" src="./assets/images/icon-arrow.svg" alt="">
         </button>
         <div class="text-2xl md:text-4xl leading-6">
@@ -53,10 +53,6 @@
       </div>
     </div>
   </main>
-  <!-- <div class="attribution"> -->
-    <!-- Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  -->
-    <!-- Coded by <a href="#">Your Name Here</a>. -->
-  <!-- </div> -->
   <script src="app.js" type="module" nomodule></script>
 </body>
 </html>
