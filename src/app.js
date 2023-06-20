@@ -6,37 +6,43 @@ const digitMonths = document.querySelector("#months");
 const digitDays = document.querySelector("#days");
 const button = document.querySelector("#button");
 
-const emptyValue = "- -";
-button.addEventListener("click", () => {
-  const currentDay = new Date().getDate();
-  const currentMonth = new Date().getMonth() + 1;
-  const currentYear = new Date().getFullYear();
+const getCurrentDate = () => {
+  const currentDate = new Date();
+  const currentDay = currentDate.getDate();
+  const currentMonth = currentDate.getMonth() + 1;
+  const currentYear = currentDate.getFullYear();
+  return { currentDay, currentMonth, currentYear };
+};
 
-  let yearDiff = currentYear - inputYears.value;
-  let monthDiff = Math.abs(currentMonth - inputMonths.value);
-  let dayDiff = Math.abs(currentDay - inputDays.value);
-
-  if (inputMonths.value >= currentMonth) {
-    monthDiff = currentMonth + (12 - inputMonths.value);
-    if (monthDiff === 12) {
-      monthDiff = 0;
-    }
+const calculateDateDifference = (currentValue, inputDate) => {
+  if (inputDate >= currentValue) {
+    return currentValue + (12 - inputDate);
   } else {
-    monthDiff = inputMonths.value;
+    return inputDate;
   }
+};
 
-  if (inputMonths.value < currentMonth) {
+const updateDisplay = (years, months, days) => {
+  digitYears.textContent = years;
+  digitMonths.textContent = months;
+  digitDays.textContent = days;
+};
+
+button.addEventListener("click", () => {
+  const { currentDay, currentMonth, currentYear } = getCurrentDate();
+  const inputYear = parseInt(inputYears.value);
+  const inputMonth = parseInt(inputMonths.value);
+  const inputDay = parseInt(inputDays.value);
+
+  let yearDiff = currentYear - inputYear;
+  let monthDiff = Math.abs(currentMonth - inputMonth);
+  let dayDiff = Math.abs(currentDay - inputDay);
+
+  monthDiff = calculateDateDifference(currentMonth, inputMonth);
+
+  if (inputMonth > currentMonth) {
     yearDiff--;
   }
 
-  // if (dayDiff >= currentDay && ) {
-  //   console.log("1");
-  // } else {
-  //   console.log("2");
-  //   yearDiff++;
-  // }
-
-  digitYears.textContent = yearDiff;
-  digitMonths.textContent = monthDiff;
-  digitDays.textContent = dayDiff;
+  updateDisplay(yearDiff, monthDiff, dayDiff);
 });
